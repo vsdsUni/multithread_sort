@@ -1,20 +1,14 @@
-# Contando letras A usando multithreads
+# Ordenação em multithread
 
-Esta tarefa consiste em receber um texto na entrada e contar quantas letras `a`
-ou `A` (o sistema é case-insensitive!) existem nessa entrada. Porém, trata-se de
-um exercício de programação, e não somente de uma solução com algoritmo.
+Este exercício consiste em programar um algoritmo de ordenação que executa em
+múltiplas threads simultâneas. A ordenação é um problema bem conhecido e as
+soluções melhor paralelizáveis são, tipicamente, variantes do MergeSort ou do
+QuickSort.
 
-**O objetivo desta tarefa é fazer o sistema operar como multi-thread,
-usando a biblioteca `lpthread`.**
-
-As soluções deverão ser estruturadas de forma que:
-
-1. cada linha seja analisada por
-uma thread independente.
-1. As threads deverão (ao menos potencialmente) poder
-executar em paralelo.
-1. O programa deverá assumir um **número máximo de threads paralelas** igual a
-`4`.
+1. O vetor deve ser processado por diversas threads paralelas
+1. O número máximo de threads paralelas fica a critério do programador, mas deve
+   ser um número *finito*, *razoável* (ou seja: não é interessante usar 1024 threads
+   paralelas) e *claro*.
 1. O programa deve garantir que todas as threads encerram *antes* do fim do
    programa principal.
 
@@ -25,11 +19,8 @@ verificados manualmente, caso a caso.
 
 Entrada | Saida
 ------- | -----
-`Teste\n` | `0\n`
-`a\n` | `1\n`
-`a\nA\n` | `2\n` (operando em duas threads)
-`a\nA\nTeste\n` | `2\n` (operando em três threads)
-
+`5 4 3 2 1\n` | `1 2 3 4 5\n`
+`3 2 4 1 5\n` | `1 2 3 4 5\n`
 
 ## Instruções adicionais
 
